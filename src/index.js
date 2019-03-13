@@ -20,7 +20,7 @@ function find(m, x, y) {
   for (var i = 0; i < 9; i++) {
     n[m[y][i]]++;
     n[m[i][x]]++;
-    n[p[(3 * ((y/3)|0))+((i/3)|0)][(3 * ((x/3)|0))+(i%3)]]++;
+    n[m[(3 * ((y/3)|0))+((i/3)|0)][(3 * ((x/3)|0))+(i%3)]]++;
   }
 
   if (n.indexOf(0) === n.lastIndexOf(0)) return n.indexOf(0);
