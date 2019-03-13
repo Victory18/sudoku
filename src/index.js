@@ -20,7 +20,7 @@ module.exports = function solveSudoku(matrix) {
       for (var x = 0; x < 9; x++ ) {
         if (matrix[y][x] === 0) {
           matrix[y][x] = find(matrix, x, y);
-          gap = matrix[x][y];
+          gap = matrix[y][x];
         }
       }
     }
