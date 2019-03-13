@@ -13,7 +13,7 @@ function find(m, x, y) {
 
 }
 
-module.exports = function solveSudoku(matrix) {
+function solveSudoku(matrix) {
   do {
     var gap = 0;
     for (var y = 0; y < 9; y++) {
