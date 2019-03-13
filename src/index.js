@@ -17,10 +17,10 @@ module.exports = function solveSudoku(matrix) {
   do {
     var gap = 0;
     for (var y = 0; y < 9; y++) {
-      for (var x = 0; x < 9; x++ ) {
+      for (var x = 0; x < 9; x++) {
         if (matrix[y][x] === 0) {
           matrix[y][x] = find(matrix, x, y);
-          gap = matrix[y][x];
+          gap |= matrix[y][x];
         }
       }
     }
