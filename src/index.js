@@ -1,5 +1,5 @@
 function find(m, x, y) {
-  var n = [0,0,0,0,0,0,0,0,0];
+  var n = [0,0,0,0,0,0,0,0,0,0];
 
   for (var i = 0; i < 9; i++) {
     n[m[y][i]]++;
@@ -19,7 +19,7 @@ module.exports = function solveSudoku(matrix) {
     for (var y = 0; y < 9; y++) {
       for (var x = 0; x < 9; x++ ) {
         if (matrix[y][x] === 0) {
-          matrix[y][x] = find(m, x, y);
+          matrix[y][x] = find(matrix, x, y);
           gap = matrix[x][y];
         }
       }
