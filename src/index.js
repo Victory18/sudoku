@@ -16,13 +16,15 @@ module.exports = function solveSudoku(matrix) {
 
 function find(m, x, y) {
   var n = [0,0,0,0,0,0,0,0,0];
-  
+
   for (var i = 0; i < 9; i++) {
     n[m[i][y]]++;
-    n[m[x][y]]++;
+    n[m[x][i]]++;
     n[m[x%3 + i/3|0][y%3 + i/3|0]]++;
   }
 
-  if(n.indexOf(0) === n.lastIndexOf(0)) return 0;
+  if (n.indexOf(0) === n.lastIndexOf(0)) return n.indexOf(0);
+
+  return 0;
 
 }
