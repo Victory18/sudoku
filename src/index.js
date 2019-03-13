@@ -1,3 +1,18 @@
+function find(m, x, y) {
+  var n = [0,0,0,0,0,0,0,0,0];
+
+  for (var i = 0; i < 9; i++) {
+    n[m[y][i]]++;
+    n[m[i][x]]++;
+    n[m[(3 * ((y/3)|0))+((i/3)|0)][(3 * ((x/3)|0))+(i%3)]]++;
+  }
+
+  if (n.indexOf(0) === n.lastIndexOf(0)) return n.indexOf(0);
+
+  return 0;
+
+}
+
 module.exports = function solveSudoku(matrix) {
   do {
     var gap = 0;
@@ -14,17 +29,3 @@ module.exports = function solveSudoku(matrix) {
   return matrix;
 }
 
-function find(m, x, y) {
-  var n = [0,0,0,0,0,0,0,0,0];
-
-  for (var i = 0; i < 9; i++) {
-    n[m[y][i]]++;
-    n[m[i][x]]++;
-    n[m[(3 * ((y/3)|0))+((i/3)|0)][(3 * ((x/3)|0))+(i%3)]]++;
-  }
-
-  if (n.indexOf(0) === n.lastIndexOf(0)) return n.indexOf(0);
-
-  return 0;
-
-}
